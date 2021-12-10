@@ -19,7 +19,12 @@ export default {
   components: {
     topbar,
     presentation,
-  }
+  },
+  // data() {
+  //   return {
+  //     title: 'yo'
+  //   }
+  // },
 }
 </script>
 
