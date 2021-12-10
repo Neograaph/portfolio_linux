@@ -1,16 +1,42 @@
 <template>
-  <div>Hello !</div>
-  <demo-component />
+  <div class="bg">
+    <topbar />
+    <div class='iconsDesktop'>
+      <presentation />
+      <presentation />
+      <presentation />
+      <presentation />
+      <presentation />
+    </div>
+
+  </div>
 </template>
 
 <script>
-import DemoComponent from '../components/DemoComponent.vue';
+import topbar from '../components/topbar.vue';
+import presentation from '../components/presentation.vue';
 export default {
   components: {
-    DemoComponent
+    topbar,
+    presentation,
   }
 }
 </script>
 
 <style>
+*{
+  margin: 0;
+  padding: 0;
+}
+.bg{
+  height: 100vh;
+  width: 100vw;
+  background: url('../img/ubuntu21.jpeg');
+  background-position: center;
+}
+/* .iconsDesktop{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+} */
 </style>
