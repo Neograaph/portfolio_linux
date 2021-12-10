@@ -4,8 +4,23 @@
     <figcaption class="subIcon">maxime</figcaption>
   </figure>
 
-  <div v-if='pageOpen' @click="closePage" class="page">
-    YOOOO
+  <div v-if='pageOpen' class="page">
+    <div class="noteHeader">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+        maxime.txt
+        <svg @click="closePage" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 closeBtn" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+    </div>
+    <div class="noteContent">
+      Je m'appelle Maxime, j'ai 25 ans et je suis en formation de développeur web. Je vous présente ici certains de mes projets, réalisés lors de ma formation ou pendant mon temps libre. <br/>
+      Pour me soumettre un projet, vous pouvez me contacter par mail ou sur les réseaux. 
+    </div>
+    <div class="noteFooter">
+      footer
+    </div>
   </div>
 </template>
 
@@ -31,13 +46,6 @@ export default {
       }      
     }
   },
-  // watch: {
-  //   isOpenPage () {
-  //     if (this.pageOpen==true){
-        
-  //     }
-  //   }
-  // }
 };
 </script>
 
@@ -65,6 +73,10 @@ export default {
   }
   .subIcon{
     text-align: center;
+    color: white;
+  }
+  .iconGroup:hover > .subIcon{
+    color: black;
   }
 
 /* ouverture de la page */
@@ -75,9 +87,38 @@ export default {
     top: 65px;
     left: 0;
     right: 0;
-    background: red;
+    background: darkblue;
+    color: white;
     height:90vh;
     width: 90vw;
     z-index: 100;
+    border-radius: 10px 10px 0 0;
+  }
+  svg{
+    height: 40px;
+    color: whitesmoke;
+  }
+  .noteHeader{
+    background: #292825;
+    border-radius: 10px 10px 0 0;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 0 10px;
+  }
+  .closeBtn{
+    color: red;
+  }
+  .closeBtn:hover{
+    color: white;
+    cursor: pointer;
+  }
+  .noteContent{
+    padding: 5px 10px 5px 10px;
+  }
+  .noteFooter{
+    display: flex;
   }
 </style>
