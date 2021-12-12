@@ -1,6 +1,6 @@
 <template>
   <figure class="iconGroup" @click="openPage">
-    <img class='icon' src="../img/notes.png" alt="file">
+    <img class='icon' src="../img/note.png" alt="file">
     <figcaption class="subIcon">maxime.txt</figcaption>
   </figure>
 
@@ -61,6 +61,8 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
   }
   .iconGroup:hover{
     background: lightgray;
@@ -77,6 +79,7 @@ export default {
   .subIcon{
     text-align: center;
     color: white;
+    margin-top: 5px;
   }
   .iconGroup:hover > .subIcon{
     color: black;

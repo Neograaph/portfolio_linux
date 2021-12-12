@@ -54,6 +54,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 10px;
   }
   .iconGroup:hover{
     background: lightgray;
@@ -70,6 +71,7 @@ export default {
   .subIcon{
     text-align: center;
     color: white;
+    margin-top: 5px;
   }
   .iconGroup:hover > .subIcon{
     color: black;
