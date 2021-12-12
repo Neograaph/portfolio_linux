@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\WorkRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\WorkRepository;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=WorkRepository::class)
@@ -19,31 +20,37 @@ class Work
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ({"displayProject"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ({"displayProject"})
      */
     private $languages;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ({"displayProject"})
      */
     private $date;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups ({"displayProject"})
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups ({"displayProject"})
      */
     private $link_web;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups ({"displayProject"})
      */
     private $link_repo;
 
