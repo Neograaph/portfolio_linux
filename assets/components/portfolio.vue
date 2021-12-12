@@ -1,7 +1,7 @@
 <template>
   <figure class="iconGroup" @click="openPage">
     <img class='icon' src="../img/portfolio.png" alt="file">
-    <figcaption class="subIcon">Portfolio</figcaption>
+    <figcaption class="subIcon">portfolio</figcaption>
   </figure>
 
   <div v-if='pageOpen' class="page">
@@ -129,7 +129,7 @@ export default {
     color: whitesmoke;
   }
   .noteHeader{
-    background: #292825;
+    background: RGB(44,44,44);
     border-radius: 10px 10px 0 0;
     height: 50px;
     display: flex;

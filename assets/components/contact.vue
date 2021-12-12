@@ -1,7 +1,7 @@
 <template>
   <figure class="iconGroup" @click="openPage">
-    <img class='icon' src="../img/notes.png" alt="file">
-    <figcaption class="subIcon">maxime.txt</figcaption>
+    <img class='icon' src="../img/mail.png" alt="file">
+    <figcaption class="subIcon">contact</figcaption>
   </figure>
 
   <div v-if='pageOpen' class="page">
@@ -9,17 +9,16 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 svgTop" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
         </svg>
-        maxime.txt
+        contact
         <svg @click="closePage" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 closeBtn svgTop" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
     </div>
     <div class="noteContent">
-      Je m'appelle Maxime, j'ai 25 ans et je suis en formation de développeur web. Je vous présente ici certains de mes projets, réalisés lors de ma formation ou pendant mon temps libre. <br/>
-      Pour me soumettre un projet, vous pouvez me contacter par mail ou sur les réseaux. 
+
     </div>
     <div class="noteFooter">
-      <div>loading file "/home/maxime/desktop/maxime.txt"...</div>
+      <div>loading file "/home/maxime/desktop/contact"...</div>
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 svgBot" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>
@@ -29,7 +28,7 @@
 
 <script type="application/javascript">
 export default {
-  name: "presentation",
+  name: "contact",
   data () {
     return {
       pageOpen: false,

@@ -3,10 +3,9 @@
     <topbar />
     <div class='iconsDesktop'>
       <presentation />
-      <portfolio demo="5"/>
-      <!-- <presentation />
-      <presentation />
-      <presentation /> -->
+      <portfolio />
+      <contact />
+      <terminal />
     </div>
 
   </div>
@@ -16,11 +15,15 @@
 import topbar from '../components/topbar.vue';
 import presentation from '../components/presentation.vue';
 import portfolio from '../components/portfolio.vue';
+import contact from '../components/contact.vue';
+import terminal from '../components/terminal.vue';
 export default {
   components: {
     topbar,
     presentation,
     portfolio,
+    contact,
+    terminal
   },
   props: ['demo'],
 }
