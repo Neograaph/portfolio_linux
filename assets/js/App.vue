@@ -3,10 +3,10 @@
     <topbar />
     <div class='iconsDesktop'>
       <presentation />
+      <portfolio demo="5"/>
+      <!-- <presentation />
       <presentation />
-      <presentation />
-      <presentation />
-      <presentation />
+      <presentation /> -->
     </div>
 
   </div>
@@ -15,16 +15,14 @@
 <script>
 import topbar from '../components/topbar.vue';
 import presentation from '../components/presentation.vue';
+import portfolio from '../components/portfolio.vue';
 export default {
   components: {
     topbar,
     presentation,
+    portfolio,
   },
-  // data() {
-  //   return {
-  //     title: 'yo'
-  //   }
-  // },
+  props: ['demo'],
 }
 </script>
 
