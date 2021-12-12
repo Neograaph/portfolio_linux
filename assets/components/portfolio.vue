@@ -15,8 +15,14 @@
         </svg>
     </div>
     <div class="noteContent">
-      {{ demo }}
-      mdr 
+      <div v-for='project in this.portfolio' :key='project'>
+        <div>{{project.name}}</div>
+        <div>{{project.languages}}</div>
+        <div>{{project.description}}</div>
+        <div>{{project.date}}</div>
+        <div>{{project.link_web}}</div>
+        <div>{{project.link_repo}}</div>
+      </div>
     </div>
     <div class="noteFooter">
       <div>loading file "/home/maxime/desktop/portfolio"...</div>
@@ -28,11 +34,13 @@
 </template>
 
 <script type="application/javascript">
+import axios from 'axios';
 export default {
   name: "portfolio",
   data () {
     return {
       pageOpen: false,
+      portfolio: null,
     }
   },
   props: ['demo'],
@@ -40,14 +48,22 @@ export default {
     openPage () {
       if (this.pageOpen==false){
         this.pageOpen=true;
-        // console.log(this.pageOpen);
+        this.loadPortfolio();
       }
     },
     closePage () {
       if (this.pageOpen==true){
         this.pageOpen=false;
-        // console.log(this.pageOpen);
       }      
+    },
+    loadPortfolio(event) {
+      axios.get("/api/portfolio").then(response => {
+        let data = response.data;
+        this.portfolio = data;
+        // console.log(data);
+        // console.log(this.portfolio);
+        // console.log(this.portfolio[0].name)
+      });
     }
   },
 };
