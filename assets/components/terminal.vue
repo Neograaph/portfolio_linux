@@ -15,7 +15,7 @@
         </svg>
     </div>
     <div class="noteContent">
- 
+      maxime@maxime-HM863BX ~ $
     </div>
   </div>
 </template>
