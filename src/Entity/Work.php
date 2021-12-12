@@ -54,6 +54,12 @@ class Work
      */
     private $link_repo;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Groups ({"displayProject"})
+     */
+    private $img;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -127,6 +133,18 @@ class Work
     public function setLinkRepo(?string $link_repo): self
     {
         $this->link_repo = $link_repo;
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(string $img): self
+    {
+        $this->img = $img;
 
         return $this;
     }

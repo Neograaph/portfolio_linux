@@ -22,6 +22,7 @@ class AdminController extends AbstractController
     {
         $form = $this->createFormBuilder()
             ->add('name', TextType::class)
+            ->add('url', TextareaType::class)
             ->add('languages', TextType::class)
             ->add('date', TextType::class)
             ->add('description', TextareaType::class) 
@@ -44,6 +45,7 @@ class AdminController extends AbstractController
             $work->setDescription($data['description']);
             $work->setLinkWeb($data['lien_du_site']);
             $work->setLinkRepo($data['lien_du_code']);
+            $work->setImg($data['url']);
 
             $em->persist($work);
             $em->flush();

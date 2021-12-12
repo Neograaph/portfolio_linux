@@ -1,6 +1,6 @@
 <template>
   <figure class="iconGroup" @click="openPage">
-    <img class='icon' src="../img/essay.png" alt="file">
+    <img class='icon' src="../img/notes.png" alt="file">
     <figcaption class="subIcon">maxime.txt</figcaption>
   </figure>
 

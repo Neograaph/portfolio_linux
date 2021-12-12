@@ -1,6 +1,6 @@
 <template>
   <figure class="iconGroup" @click="openPage">
-    <img class='icon' src="../img/essay.png" alt="file">
+    <img class='icon' src="../img/portfolio.png" alt="file">
     <figcaption class="subIcon">Portfolio</figcaption>
   </figure>
 
@@ -15,13 +15,16 @@
         </svg>
     </div>
     <div class="noteContent">
-      <div v-for='project in this.portfolio' :key='project'>
-        <div>{{project.name}}</div>
-        <div>{{project.languages}}</div>
-        <div>{{project.description}}</div>
-        <div>{{project.date}}</div>
-        <div>{{project.link_web}}</div>
-        <div>{{project.link_repo}}</div>
+      <div class="containerCards">
+        <div v-for='project in this.portfolio' :key='project' class="card">
+            <div class="nameProject">{{project.name}}</div>
+            <div class="imgProject"><img :src="project.img" alt="image non disponible"> </div>
+            <div>{{project.languages}}</div>
+            <div>{{project.description}}</div>
+            <div><a :href="project.link_web" target="_blank"></a></div>
+            <div>{{project.link_repo}}</div>
+            <div>{{project.date}}</div>
+        </div>
       </div>
     </div>
     <div class="noteFooter">
@@ -110,7 +113,7 @@ export default {
     top: 65px;
     left: 0;
     right: 0;
-    background: darkblue;
+    background: rgb(155, 155, 160);
     color: white;
     height:90vh;
     width: 90vw;
@@ -143,8 +146,11 @@ export default {
     cursor: pointer;
   }
   .noteContent{
-    padding: 5px 10px 5px 10px;
+    padding: 10px 10px 10px 10px;
     flex-grow: 10;
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
   }
   .noteFooter{
     background: #292825;
@@ -153,5 +159,33 @@ export default {
     align-items: center;
     height: 30px;
     padding: 0 10px;
+  }
+  .containerCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card{
+    margin: 1%;
+    border: solid 1px black;
+    height: 35vh;
+    width: 25vw;
+    /* min-height: 40vh;
+    min-width: 20vw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+  }
+  .card img{
+    max-height: 20vh;
+    max-width: 20vw;
+  }
+  .imgProject{
+    flex-grow: 10;
+  }
+  .nameProject{
+    margin-bottom: 10px;
   }
 </style>
