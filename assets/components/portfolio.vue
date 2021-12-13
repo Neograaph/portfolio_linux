@@ -15,33 +15,21 @@
         </svg>
     </div>
     <div class="noteContent">
-      <!-- <div class="containerCards"> -->
-        <!-- <div v-for='project in this.portfolio' :key='project' class="card">
-            <div class="nameProject">{{project.name}}</div>
-            <div class="imgProject"><img :src="project.img" alt="image non disponible"> </div>
-            <div>{{project.languages}}</div>
-            <div>{{project.description}}</div>
-            <div><a :href="project.link_web" target="_blank"></a></div>
-            <div>{{project.link_repo}}</div>
-            <div>{{project.date}}</div>
-        </div> -->
-
-            <div class="wrap" >
-              <div class="tile" v-for='project in this.portfolio' :key='project'> 
-                <img :src="project.img" alt="image non disponible"/>
-                <div class="text">
-                <h1>{{project.name}}</h1>
-                <h2 class="animate-text">{{project.languages}}</h2>
-                <p class="animate-text">{{project.description}}</p>
-              <div class="dots">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-                </div>
-              </div>
+      <div class="wrap" >
+        <div class="tile" v-for='project in this.portfolio' :key='project'> 
+          <img :src="project.img" alt="image non disponible"/>
+          <div class="text">
+            <h1>{{project.name}}</h1>
+            <h2 class="animate-text">{{project.languages}}</h2>
+            <p class="animate-text">{{project.description}}</p>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-      <!-- </div> -->
+          </div>
+        </div>
+      </div>
     </div>
     <div class="noteFooter">
       <div>loading file "/home/maxime/desktop/portfolio"...</div>
@@ -212,7 +200,7 @@ export default {
 
 
 
-  .wrap
+.wrap
 {
   margin:50px auto 50px auto;
   width:100%;
