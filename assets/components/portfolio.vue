@@ -19,7 +19,7 @@
         <div class="tile" v-for='project in this.portfolio' :key='project'> 
           <img :src="project.img" alt="image non disponible"/>
           <div class="text">
-            <h1>{{project.name}}</h1>
+            <h1 class="nameProject">{{project.name}}</h1>
             <h2 class="animate-text">{{project.languages}}</h2>
             <p class="animate-text">{{project.description}}</p>
             <div class="dots">
@@ -119,7 +119,7 @@ export default {
     top: 65px;
     left: 0;
     right: 0;
-    background: rgb(155, 155, 160);
+    background: white;
     color: white;
     height:90vh;
     width: 90vw;
@@ -193,10 +193,15 @@ export default {
   } */
   /* .imgProject{
     flex-grow: 10;
-  }
-  .nameProject{
-    margin-bottom: 10px;
-  } */
+  }*/
+  /* .nameProject{
+    font-family: 'Permanent Marker';
+    text-align: center;
+    color: red;
+    /* background: white; */
+    /* opacity: 80%; */
+    /* -webkit-text-stroke: black 1px;
+  }  */
 
 
 
@@ -221,7 +226,7 @@ export default {
   position:relative;
   cursor:pointer;
   transition: all 0.4s ease-out;
-  box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.44);
+  box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.10);
   overflow:hidden;
   color:white;
   font-family:'Roboto';
@@ -242,27 +247,34 @@ export default {
 {
 /*   z-index:99; */
   position:absolute;
-  padding:30px;
+  /* padding:30px; */
   height:calc(100% - 60px);
+  width: 100%;
 }
-.tile h1
-{
- 
+.tile h1{
   font-weight:300;
-  margin:0;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  font-family: 'Permanent Marker';
+  text-align: center;
+  color: white;
+  background: #0000005c;
+}
+.tile:hover {
+  background: #0000005c;
 }
 .tile h2
 {
   font-weight:100;
   margin:20px 0 0 0;
+  padding: 0 0 0 20px;
   font-style:italic;
-   transform: translateX(200px);
+  transform: translateX(200px);
 }
 .tile p
 {
   font-weight:300;
   margin:20px 0 0 0;
+  padding: 0 0 0 20px;
   line-height: 25px;
 /*   opacity:0; */
   transform: translateX(-200px);
@@ -275,9 +287,10 @@ export default {
 }
 .tile:hover
 {
-/*   background-color:#99aeff; */
-box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
+/* background-color:#99aeff; */
+  box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   transform:scale(1.05);
+  background: #0000005c;
 }
 .tile:hover img
 {
@@ -306,15 +319,14 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
 
 .dots span
 {
-    width: 5px;
-    height:5px;
-    background-color: currentColor;
-    border-radius: 50%;
-    display:block;
+  width: 5px;
+  height:5px;
+  background-color: currentColor;
+  border-radius: 50%;
+  display:block;
   opacity:0;
   transition: transform 0.4s ease-out, opacity 0.5s ease;
   transform: translateY(30px);
- 
 }
 
 .tile:hover span
