@@ -17,17 +17,15 @@
     <div class="noteContent">
       <div class="wrap" >
         <div class="tile" v-for='project in this.portfolio' :key='project'> 
-          <img :src="project.img" alt="image non disponible"/>
-          <div class="text">
-            <h1 class="nameProject">{{project.name}}</h1>
-            <h2 class="animate-text">{{project.languages}}</h2>
-            <p class="animate-text">{{project.description}}</p>
-            <div class="dots">
-                <span></span>
-                <span></span>
-                <span></span>
+          <a :href="project.link_web" target="_blank" class="linkWeb">
+            <img :src="project.img" alt="image non disponible"/>
+            <div class="text">
+              <h1 class="nameProject">{{project.name}}</h1>
+              <h2 class="animate-text">{{project.languages}}</h2>
+              <p class="animate-text">{{project.description}}</p>
+              <!-- <a :href="project.link_repo" class="animate-text link" target="_blank">Code du projet</a> -->
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -209,6 +207,7 @@ export default {
     position:absolute;
     height:100%;
     width: 100%;
+    color: white;
   }
   .tile h1{
     font-weight:300;
@@ -253,7 +252,7 @@ export default {
     transform:translateX(0);
     opacity:1;
   }
-  .dots{
+  /* .dots{
     position:absolute;
     bottom:20px;
     right:30px;
@@ -291,7 +290,7 @@ export default {
   }
   .dots span:nth-child(3){
     transition-delay: 0.15s;
-  }
+  } */
 
 
   @media (max-width: 1000px) {
@@ -299,5 +298,9 @@ export default {
     flex-direction: column;
       width:400px;
     }
+  }
+  .link{
+    text-decoration: none;
+    color: white;
   }
 </style>
