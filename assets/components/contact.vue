@@ -24,12 +24,12 @@
           </div>
 
           <form action="javascript:void(0)" method="post" class="contactForm">
-            <input placeholder="Nom" type="text">
-            <input placeholder="Prénom" type="text">
-            <input placeholder="Email" type="email">
-            <input placeholder="Titre" type="text">
-            <textarea placeholder="Message" class="txtarea" rows="8" style="resize: none;"></textarea>
-            <input type="submit" value="Envoyer" class="button button3">
+            <input placeholder="Nom" type="text" id="lastnameContact">
+            <input placeholder="Prénom" type="text" id="firstnameContact">
+            <input placeholder="Email" type="email" id="emailContact">
+            <input placeholder="Titre" type="text" id="titleContact">
+            <textarea placeholder="Message" class="txtarea" rows="8" style="resize: none;" id="messageContact"></textarea>
+            <input type="submit" value="Envoyer" class="button button3" @click="sendMsg">
           </form>
 
           <div class="contactRS">
@@ -56,6 +56,7 @@
 </template>
 
 <script type="application/javascript">
+import axios from 'axios';
 export default {
   name: "contact",
   data () {
@@ -75,6 +76,35 @@ export default {
         this.pageOpen=false;
         // console.log(this.pageOpen);
       }      
+    },
+    sendMsg () {
+      let firstname = document.getElementById('firstnameContact').value;
+      let lastname = document.getElementById('lastnameContact').value;
+      let email = document.getElementById('emailContact').value;
+      let title = document.getElementById('titleContact').value;
+      let message = document.getElementById('messageContact').value;
+      let dataContact = {
+        firstname: firstname, 
+        lastname: lastname, 
+        email: email, 
+        title: title, 
+        message: message
+      }
+
+      // console.log(dataContact);
+      console.log(axios);
+
+      axios.post(`/new-msg`, {
+        dataContact
+      },{
+        headers: {
+          'Content-type': 'application/json'
+        }
+      })
+      .then(response => console.log(response.request))
+      .catch(err => console.warn(err));
+
+      //  alert(this.response);
     }
   },
 };
