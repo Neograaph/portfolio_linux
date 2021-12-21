@@ -26,6 +26,7 @@
           <form action="javascript:void(0)" method="post" class="contactForm">
             <input placeholder="Nom" type="text">
             <input placeholder="Prénom" type="text">
+            <input placeholder="Email" type="email">
             <input placeholder="Titre" type="text">
             <textarea placeholder="Message" class="txtarea" rows="8" style="resize: none;"></textarea>
             <input type="submit" value="Envoyer" class="button button3">
@@ -33,8 +34,12 @@
 
           <div class="contactRS">
             <div>Je suis aussi disponible sur :</div>
-            <img src="../img/linkedin.png" alt="logo linkedIn">
-            <img src="../img/malt.png" alt="logo malt">
+            <a href="https://www.linkedin.com/in/maxime-gauthier45/" target="_blank">
+              <img src="../img/linkedin.png" alt="logo linkedIn">
+            </a>
+            <a href="https://www.malt.fr/profile/maximegauthier1" target="_blank">
+              <img src="../img/malt.png" alt="logo malt">
+            </a>
           </div>
 
         </div>
@@ -189,7 +194,7 @@ export default {
     justify-content: center;
     gap: 40px;
   }
-  .contactRS > img{
+  .contactRS > a > img{
     height: 80px;
     cursor: pointer;
   }
@@ -201,6 +206,7 @@ export default {
   .contactPicture{
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   .contactPicture > img{
     height: 30vh;
