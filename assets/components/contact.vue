@@ -27,13 +27,13 @@
             <input placeholder="Nom" type="text">
             <input placeholder="Prénom" type="text">
             <input placeholder="Titre" type="text">
-            <textarea placeholder="Message" class="txtarea" rows="10" style="resize: none;"></textarea>
-            <input type="submit" value="Envoyer">
+            <textarea placeholder="Message" class="txtarea" rows="8" style="resize: none;"></textarea>
+            <input type="submit" value="Envoyer" class="button button3">
           </form>
 
           <div class="contactRS">
             <div>Je suis aussi disponible sur :</div>
-            <img src="../img/linkedIn.png" alt="logo linkedIn">
+            <img src="../img/linkedin.png" alt="logo linkedIn">
             <img src="../img/malt.png" alt="logo malt">
           </div>
 
@@ -206,6 +206,35 @@ export default {
     height: 30vh;
     border: thick double #32a1ce;
   }
+
+  .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  }
+  .button3 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
+  }
+  .button3:hover {
+    background-color: #f44336;
+    color: white;
+  }
+
+
+
+
+
+  /* responsive */
   @media only screen and (max-width: 1150px){
     .contentForm{
       flex-direction: column;
