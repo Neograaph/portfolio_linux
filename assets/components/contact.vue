@@ -16,6 +16,26 @@
     </div>
     <div class="noteContent">
 
+      <div class="zoneForm">
+        <div class="contentForm">
+
+          <form action="javascript:void(0)" method="post" class="contactForm">
+            <input placeholder="Nom" type="text">
+            <input placeholder="Prénom" type="text">
+            <input placeholder="Titre" type="text">
+            <textarea placeholder="Message" class="txtarea" style="resize: none;"></textarea>
+            <input type="submit" value="Envoyer">
+          </form>
+
+          <div class="contactRS">
+            <div>Je suis aussi disponible sur :</div>
+            <img src="../img/linkedIn.png" alt="logo linkedIn">
+            <img src="../img/malt.png" alt="logo malt">
+          </div>
+
+        </div>
+      </div>
+
     </div>
     <div class="noteFooter">
       <div>loading file "/home/maxime/desktop/contact"...</div>
@@ -129,6 +149,8 @@ export default {
   .noteContent{
     padding: 5px 10px 5px 10px;
     flex-grow: 10;
+    display: flex;
+    justify-content: center;
   }
   .noteFooter{
     background: #292825;
@@ -137,5 +159,37 @@ export default {
     align-items: center;
     height: 30px;
     padding: 0 10px;
+  }
+  .zoneForm{
+    height: 80vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contentForm{
+    display: flex;
+    gap: 50px;
+  }
+  .contactForm{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contactRS{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .contactRS > img{
+    height: 80px;
+    cursor: pointer;
+  }
+  .txtarea{
+    resize: none;
+    width: 25vw;
+    height: 40vh;
   }
 </style>
