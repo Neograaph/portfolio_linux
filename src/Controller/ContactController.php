@@ -35,14 +35,15 @@ class ContactController extends AbstractController
         $data = json_decode($requestPayload, true);
 
         // dd($dataPlugin);
+        // $fname = $_POST["firstname"];
 
         $contact = new Contact;
-        $contact->setFirstname('maxime');
+        $contact->setFirstname('neo');
         $contact->setLastname('gauthier');
         $contact->setEmail('neo@admin.com');
         $contact->setTitle('demotitre');
         $contact->setMessage('Bonjour, je recherche un ...');
-        // $contact->setFirstname($data['firstname']);
+        // $contact->setFirstname($data);
         // $contact->setLastname($data['lastname']);
         // $contact->setEmail($data['email']);
         // $contact->setTitle($data['title']);

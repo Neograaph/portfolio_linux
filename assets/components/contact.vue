@@ -90,12 +90,13 @@ export default {
         title: title, 
         message: message
       }
-
+      let dataContactJson = JSON.stringify(dataContact);
+      console.log(dataContactJson);
       // console.log(dataContact);
-      console.log(axios);
+      // console.log(axios);
 
       axios.post(`/new-msg`, {
-        dataContact
+        dataContactJson
       },{
         headers: {
           'Content-type': 'application/json'
