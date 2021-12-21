@@ -19,11 +19,15 @@
       <div class="zoneForm">
         <div class="contentForm">
 
+          <div class="contactPicture">
+            <img src="../img/moi.png" alt="maxime gauthier photo">
+          </div>
+
           <form action="javascript:void(0)" method="post" class="contactForm">
             <input placeholder="Nom" type="text">
             <input placeholder="Prénom" type="text">
             <input placeholder="Titre" type="text">
-            <textarea placeholder="Message" class="txtarea" style="resize: none;"></textarea>
+            <textarea placeholder="Message" class="txtarea" rows="10" style="resize: none;"></textarea>
             <input type="submit" value="Envoyer">
           </form>
 
@@ -174,6 +178,8 @@ export default {
   .contactForm{
     display: flex;
     flex-direction: column;
+    /* align-content: center; */
+    justify-content: center;
     gap: 10px;
   }
   .contactRS{
@@ -189,7 +195,32 @@ export default {
   }
   .txtarea{
     resize: none;
-    width: 25vw;
-    height: 40vh;
+    /* width: 25vw;
+    height: 40vh; */
+  }
+  .contactPicture{
+    display: flex;
+    align-items: center;
+  }
+  .contactPicture > img{
+    height: 30vh;
+    border: thick double #32a1ce;
+  }
+  @media only screen and (max-width: 1150px){
+    .contentForm{
+      flex-direction: column;
+      /* padding: 20% 0; */
+    }
+    .noteContent{
+      overflow-y: scroll;
+      scrollbar-color: rebeccapurple green;
+      scrollbar-width: thin;
+    }
+    .contactPicture{
+      padding-top: 40vh;
+    }
+    .contactRS{
+      padding-bottom: 30px;
+    }
   }
 </style>
