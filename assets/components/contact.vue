@@ -27,7 +27,7 @@
             <input placeholder="Nom" type="text" id="lastnameContact">
             <input placeholder="Prénom" type="text" id="firstnameContact">
             <input placeholder="Email" type="email" id="emailContact">
-            <input placeholder="Titre" type="text" id="titleContact">
+            <input placeholder="Titre du message" type="text" id="titleContact">
             <textarea placeholder="Message" class="txtarea" rows="8" style="resize: none;" id="messageContact"></textarea>
             <input type="submit" value="Envoyer" class="button button3" @click="sendMsg">
           </form>

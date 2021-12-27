@@ -22,6 +22,7 @@
             <div class="text">
               <h1 class="nameProject">{{project.name}}</h1>
               <h2 class="animate-text">{{project.languages}}</h2>
+              <p class="animate-text">{{ project.date }}</p>
               <p class="animate-text">{{project.description}}</p>
               <!-- <a :href="project.link_repo" class="animate-text link" target="_blank">Code du projet</a> -->
             </div>
@@ -117,7 +118,7 @@ export default {
     top: 65px;
     left: 0;
     right: 0;
-    background: white;
+    background: rgb(228, 225, 225);
     color: white;
     height:90vh;
     width: 90vw;
