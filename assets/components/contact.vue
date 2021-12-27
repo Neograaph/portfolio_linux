@@ -35,7 +35,7 @@
           <div class="contactRS">
             <div>Je suis aussi disponible sur :</div>
             <a href="https://www.linkedin.com/in/maxime-gauthier45/" target="_blank">
-              <img src="../img/linkedin.png" alt="logo linkedIn">
+              <img src="../img/linkedin.png" alt="logo linkedIn" class="linkedInLogo">
             </a>
             <a href="https://www.malt.fr/profile/maximegauthier1" target="_blank">
               <img src="../img/malt.png" alt="logo malt">
@@ -275,6 +275,8 @@ export default {
   @media only screen and (max-width: 1150px){
     .contentForm{
       flex-direction: column;
+      padding-top: 80px;
+      width: 80vw;
       /* padding: 20% 0; */
     }
     .noteContent{
@@ -287,6 +289,9 @@ export default {
     }
     .contactRS{
       padding-bottom: 30px;
+    }
+    .linkedInLogo{
+      scale: 70%;
     }
   }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <div>Activities</div>
+        <div class="activities">Activities</div>
         <div>{{ nowTime }}</div>
         <div>
             <div class="svgContainer">
@@ -77,4 +77,16 @@ export default {
     .svg{
         height: 15px;
     }
+
+
+
+    /* mobile */
+    @media (max-width: 550px) {
+    .activities{
+        display: none;
+    }
+    .svgContainer{
+        display: none;
+    }
+  }
 </style>

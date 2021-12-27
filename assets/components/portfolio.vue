@@ -297,11 +297,20 @@ export default {
   @media (max-width: 1000px) {
     .wrap{
     flex-direction: column;
-      width:400px;
+    align-content: center;
+      /* width:400px; */
     }
   }
   .link{
     text-decoration: none;
     color: white;
+  }
+
+  /* mobile */
+  @media (max-width: 550px) {
+    .tile{
+      height: 60vw;
+      width: 60vw;
+    }
   }
 </style>
