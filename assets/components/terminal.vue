@@ -15,7 +15,11 @@
         </svg>
     </div>
     <div class="noteContent">
+      <form class="formField" action="">
       maxime@maxime-HM863BX ~ $
+      <input class="inputField" type="text">
+      <input class="submitField" type="submit" value=">">
+      </form>
     </div>
   </div>
 </template>
@@ -129,6 +133,33 @@ export default {
       height: 90vh;
       width: 90vw;
       top: 65px;
+    }
+  }
+  .formField{
+    display: flex;
+  }
+  .inputField{
+    background: RGB(48,10,36);
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    flex-grow: 5;
+  }
+  .submitField{
+    background: RGB(48,10,36);
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+  }
+  @media (max-width: 460px) {
+    .formField{
+      flex-direction: column;
+    }
+    .submitField{
+      text-align: start;
     }
   }
 </style>
