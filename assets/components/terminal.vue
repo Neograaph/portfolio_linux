@@ -15,7 +15,7 @@
         </svg>
     </div>
     <div class="noteContent">
-      <form class="formField" action="">
+      <form class="formField" action="javascript:void(0)">
       maxime@maxime-HM863BX ~ $
       <input class="inputField" type="text">
       <input class="submitField" type="submit" value=">">
