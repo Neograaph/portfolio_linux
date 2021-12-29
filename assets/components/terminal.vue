@@ -85,13 +85,13 @@ export default {
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
-    top: 65px;
+    top: 150px;
     left: 0;
     right: 0;
     background: RGB(48,10,36);
     color: white;
-    height:90vh;
-    width: 90vw;
+    height:50vh;
+    width: 50vw;
     z-index: 100;
     border-radius: 10px 10px 0 0;
   }
@@ -123,5 +123,12 @@ export default {
   .noteContent{
     padding: 5px 10px 5px 10px;
     flex-grow: 10;
+  }
+  @media (max-width: 1000px) {
+    .page{
+      height: 90vh;
+      width: 90vw;
+      top: 65px;
+    }
   }
 </style>
