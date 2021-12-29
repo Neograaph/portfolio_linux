@@ -213,7 +213,7 @@ export default {
   .tile h1{
     font-weight:300;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    font-family: 'Permanent Marker';
+    font-family: 'ubuntu';
     text-align: center;
     color: white;
     background: #0000005c;
@@ -315,5 +315,16 @@ export default {
     .wrap{
     row-gap: 3rem;
     }
+    .page{
+      border-radius: 0 0 0 0;
+      height:100vh;
+      width: 100vw;
+      top: 0px;
+
+    }
+    .noteHeader{
+      border-radius: 0 0 0 0;
+    }
   }
+
 </style>

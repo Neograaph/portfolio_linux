@@ -294,4 +294,18 @@ export default {
       scale: 70%;
     }
   }
+
+  /* mobile */
+  @media (max-width: 550px) {
+    .page{
+      border-radius: 0 0 0 0;
+      height:100vh;
+      width: 100vw;
+      top: 0px;
+
+    }
+    .noteHeader{
+      border-radius: 0 0 0 0;
+    }
+  }
 </style>

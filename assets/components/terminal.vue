@@ -154,12 +154,28 @@ export default {
     color: white;
     cursor: pointer;
   }
+
+  /* mobile */
   @media (max-width: 460px) {
     .formField{
       flex-direction: column;
     }
     .submitField{
       text-align: start;
+    }
+  }
+
+    /* mobile */
+  @media (max-width: 550px) {
+    .page{
+      border-radius: 0 0 0 0;
+      height:100vh;
+      width: 100vw;
+      top: 0px;
+
+    }
+    .noteHeader{
+      border-radius: 0 0 0 0;
     }
   }
 </style>
