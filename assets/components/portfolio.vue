@@ -309,8 +309,11 @@ export default {
   /* mobile */
   @media (max-width: 550px) {
     .tile{
-      height: 60vw;
-      width: 60vw;
+      height: 80vw;
+      width: 80vw;
+    }
+    .wrap{
+    row-gap: 3rem;
     }
   }
 </style>
