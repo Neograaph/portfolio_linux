@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+  <section>
+    {% if app.user %}
+
+      <h1>Ajouter un projet dans le portfolio !</h1>
+      {{ form(formulaireAddPortfolio) }}
+
+    {% else %}
+
+      <h2>Accès non autorisé</h2>
+      {# <a href="{{ path('security_login') }}">Connexion</a> #}
+
+    {% endif %}
+
+  </section>
+{% endblock %}

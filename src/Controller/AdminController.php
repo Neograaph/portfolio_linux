@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AdminController extends AbstractController
 {
     /**
-     * @Route("/admin/add/work", name="add-work")
+     * @Route("/admin/portfolio/add", name="portfolio_add")
      */
     public function addWork(Request $request, EntityManagerInterface $em): Response
     {
@@ -53,7 +53,7 @@ class AdminController extends AbstractController
             return $this->redirectToRoute("home");
         }
 
-        return $this->render('admin/addWork.html.twig', [
+        return $this->render('admin/portfolioAdd.html.twig', [
             'formulaireAddPortfolio' => $form->createView()
         ]);
     }

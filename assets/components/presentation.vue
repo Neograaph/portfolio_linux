@@ -17,7 +17,7 @@
     <div class="noteContent">
       Je m'appelle Maxime, j'ai 25 ans et je suis en formation de développeur web. Je vous présente ici certains de mes projets, réalisés lors de ma formation ou pendant mon temps libre.<br/><br/>
 
-      Au cours de mes projets, j'ai eu l'occasion de travailler sur plusieurs langages de programmation ; HTML, CSS, Javascript, PHP. Ainsi que sur des frameworks comme Symfony et Vue JS.<br/><br/>
+      Au cours de mes projets, j'ai eu l'occasion de travailler sur plusieurs langages de programmation ; HTML, CSS, Javascript, PHP. Ainsi que sur des frameworks comme Symfony, Vue JS, Bootstrap et tailwind CSS.<br/><br/>
 
       Je travaille sous Linux depuis quelques mois et j'apprécie énormément cet univers, c'est ce qui m'a donné envie de réaliser ce design original pour mon portfolio.<br/><br/>
 
