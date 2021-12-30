@@ -49,4 +49,14 @@ class SecurityController extends AbstractController
      * @Route("/deconnexion", name="security_logout")
      */
     public function logout () {}
+
+    /**
+     * @Route("/infos-user", name="security_infos")
+     */
+    public function infosUser () {
+        $user = new User();
+        $user = $this->getUser();
+        
+        return $this->json($user);
+    }
 }
