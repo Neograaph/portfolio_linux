@@ -16,20 +16,25 @@
     </div>
     <div class="noteContent">
 
+      <!-- affiche les messages -->
       <div class="message" v-for="message in this.messages" :key="message">
         <p>{{ message.content }}</p>
         <div class="subMessage">
           <p>by Anonymous</p>
-          <p>{{ message.post_at }}</p>
+          <p class="dateSubMessage">{{ message.post_at }}</p>
         </div>
-      </div>    
+      </div>
 
     </div>
     <div class="noteFooter">
-      <div>loading file "/home/maxime/desktop/chat"...</div>
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 svgBot" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <!-- ajoute un nouveau message -->
+      <form class="newMessageForm" action="javascript:void(0)">
+        <input class="newMessageField" type="textarea" placeholder="Nouveau message">
+        <input class="newMessageSubmit" type="submit" value="Envoyer">
+      </form>
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 svgBot" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
+      </svg> -->
     </div>
   </div>
 </template>
@@ -162,7 +167,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     height: 30px;
-    padding: 0 10px;
+    padding: 5px;
   }
   .message{
     display: flex;
@@ -175,6 +180,21 @@ export default {
   .subMessage{
     display: flex;
     gap: 1rem;
+    justify-content: space-between;
+  }
+  .dateSubMessage{
+    text-align: end;
+  }
+  .newMessageForm{
+    display: flex;
+    width: 100%;
+  }
+  .newMessageField{
+    padding: 5px;
+    flex-grow: 10;
+  }
+  .newMessageSubmit{
+    padding: 5px;
   }
 
   /* @media (max-width: 1000px) {
