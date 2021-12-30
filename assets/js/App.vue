@@ -6,6 +6,7 @@
       <portfolio />
       <contact />
       <terminal />
+      <chat />
     </div>
 
   </div>
@@ -16,6 +17,7 @@ import topbar from '../components/topbar.vue';
 import presentation from '../components/presentation.vue';
 import portfolio from '../components/portfolio.vue';
 import contact from '../components/contact.vue';
+import chat from '../components/chat.vue';
 import terminal from '../components/terminal.vue';
 export default {
   components: {
@@ -23,9 +25,10 @@ export default {
     presentation,
     portfolio,
     contact,
-    terminal
+    terminal,
+    chat
   },
-  props: ['demo'],
+  // props: ['demo'],
 }
 </script>
 

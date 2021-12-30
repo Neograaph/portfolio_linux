@@ -18,7 +18,6 @@
       <div class="wrap" >
 
         <div class="tile" v-for='project in this.portfolio' :key='project'> 
-          <!-- <a :href="project.link_web" target="_blank" class="linkWeb"> -->
             <img :src="project.img" alt="image non disponible"/>
             <div class="text">
 
@@ -41,9 +40,7 @@
                 </a>
 
               </div>
-              <!-- <a :href="project.link_repo" class="animate-text link" target="_blank">Code du projet</a> -->
             </div>
-          <!-- </a> -->
         </div>
       </div>
     </div>
@@ -332,10 +329,10 @@ export default {
       /* width:400px; */
     }
   }
-  .link{
+  /* .link{
     text-decoration: none;
     color: white;
-  }
+  } */
 
   /* mobile */
   @media (max-width: 550px) {
