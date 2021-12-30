@@ -18,9 +18,9 @@
           </svg>
       </div>
       <div class="noteContent">
-        <form class="formField" action="javascript:void(0)">
+        <form class="formField" action="javascript:void(0)" @submit="execTerminalCmd">
         maxime@maxime-HM863BX ~ $
-        <input class="inputField" type="text">
+        <input v-model="cmd" class="inputField" type="text">
         <input class="submitField" type="submit" value=">">
         </form>
       </div>
@@ -61,6 +61,7 @@ export default {
   data () {
     return {
       pageOpen: false,
+      cmd: "",
     }
   },
   methods: {
@@ -75,6 +76,19 @@ export default {
         this.pageOpen=false;
         // console.log(this.pageOpen);
       }      
+    },
+    execTerminalCmd(){
+      // console.log(this.cmd);
+      let currentUrl = window.location.href;
+      if (this.cmd == "inscription"){
+        window.location.href = currentUrl + "inscription"
+      }
+      if (this.cmd == "connexion"){
+        window.location.href = currentUrl + "connexion"
+      }
+      if (this.cmd == "download"){
+        alert("téléchargement du CV disponible prochainement");
+      }
     }
   },
 };
