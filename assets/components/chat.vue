@@ -36,7 +36,6 @@ export default {
   data () {
     return {
       pageOpen: false,
-      portfolio: null,
     }
   },
   props: ['demo'],

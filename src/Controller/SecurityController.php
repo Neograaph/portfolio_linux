@@ -51,7 +51,7 @@ class SecurityController extends AbstractController
     public function logout () {}
 
     /**
-     * @Route("/infos-user", name="security_infos")
+     * @Route("/api/infos-user", name="security_infos")
      */
     public function infosUser () {
         $user = new User();

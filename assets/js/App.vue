@@ -6,7 +6,7 @@
       <portfolio />
       <contact />
       <terminal />
-      <chat />
+      <chat v-if="login" />
     </div>
 
   </div>
@@ -19,6 +19,9 @@ import portfolio from '../components/portfolio.vue';
 import contact from '../components/contact.vue';
 import chat from '../components/chat.vue';
 import terminal from '../components/terminal.vue';
+
+import axios from 'axios';
+
 export default {
   components: {
     topbar,
@@ -28,7 +31,23 @@ export default {
     terminal,
     chat
   },
-  // props: ['demo'],
+  data () {
+    return {
+      login: true,
+      infoUser: null,
+    }
+  },
+  methods: {
+    loadInfosUser() {
+      axios.get("/api/infos-user").then(response => {
+        let data = response.data;
+        this.infoUser = data;
+        console.log(data);
+        console.log(this.infoUser);
+        console.log(this.infoUser.username)
+    });
+    }
+  },
 }
 </script>
 
