@@ -16,8 +16,13 @@
     </div>
     <div class="noteContent">
 
-
-
+      <div class="message" v-for="message in this.messages" :key="message">
+        <p>{{ message.content }}</p>
+        <div class="subMessage">
+          <p>by Anonymous</p>
+          <p>{{ message.post_at }}</p>
+        </div>
+      </div>    
 
     </div>
     <div class="noteFooter">
@@ -44,7 +49,7 @@ export default {
     openPage () {
       if (this.pageOpen==false){
         this.pageOpen=true;
-        this.loadPortfolio();
+        this.loadMessages();
       }
     },
     closePage () {
@@ -148,7 +153,8 @@ export default {
     scrollbar-width: thin;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
+    gap: 1rem;
   }
   .noteFooter{
     background: #292825;
@@ -158,7 +164,18 @@ export default {
     height: 30px;
     padding: 0 10px;
   }
-
+  .message{
+    display: flex;
+    flex-direction: column;
+    color: black;
+  }
+  .message:hover{
+    background: #a07a08;
+  }
+  .subMessage{
+    display: flex;
+    gap: 1rem;
+  }
 
   /* @media (max-width: 1000px) {
 
