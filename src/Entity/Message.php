@@ -2,8 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\MessageRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\MessageRepository;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Annotation\Ignore;
 
 /**
  * @ORM\Entity(repositoryClass=MessageRepository::class)
@@ -20,16 +22,20 @@ class Message
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="messages")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups ({"displayMessage"})
+     * @Ignore()
      */
     private $user;
 
     /**
      * @ORM\Column(type="datetime_immutable")
+     * @Groups ({"displayMessage"})
      */
     private $post_at;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups ({"displayMessage"})
      */
     private $content;
 

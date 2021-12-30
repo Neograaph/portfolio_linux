@@ -36,6 +36,7 @@ export default {
   data () {
     return {
       pageOpen: false,
+      messages: null,
     }
   },
   props: ['demo'],
@@ -51,6 +52,15 @@ export default {
         this.pageOpen=false;
       }      
     },
+    loadMessages() {
+      axios.get("/api/messages").then(response => {
+        let data = response.data;
+        this.messages = data;
+        console.log(data);
+        console.log(this.messages);
+        console.log(this.messages[0].content)
+      });
+    }
   },
 };
 </script>

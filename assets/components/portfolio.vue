@@ -76,13 +76,10 @@ export default {
         this.pageOpen=false;
       }      
     },
-    loadPortfolio(event) {
+    loadPortfolio() {
       axios.get("/api/portfolio").then(response => {
         let data = response.data;
         this.portfolio = data;
-        // console.log(data);
-        // console.log(this.portfolio);
-        // console.log(this.portfolio[0].name)
       });
     }
   },
