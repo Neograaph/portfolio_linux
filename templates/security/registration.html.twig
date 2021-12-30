@@ -13,14 +13,14 @@
       {{ form_start(form) }}
 
       {# <label for="username">Pseudo</label> #}
-      {{ form_row(form.username, {'label': 'Pseudo :', 'attr': {'placeholder': 'Pseudo ...'}}) }}
-      <br/>
-      {{ form_row(form.email, {'label': 'Email :', 'attr': {'placeholder': 'Email ...'}}) }}
-      <br/>
-      {{ form_row(form.password, {'label': 'Mot de passe :', 'attr': {'placeholder': 'Mot de passe ...'}}) }}
-      <br/>
-      {{ form_row(form.confirm_password, {'label': 'Confirmer le mot de passe :', 'attr': {'placeholder': 'Confirmer mot de passe ...'}}) }}
-      <br/>
+      {{ form_row(form.username, {'label': false, 'attr': {'placeholder': 'Pseudo ...', 'class': 'fieldFormLogin'}}) }}
+
+      {{ form_row(form.email, {'label': false, 'attr': {'placeholder': 'Email ...', 'class': 'fieldFormLogin'}}) }}
+
+      {{ form_row(form.password, {'label': false, 'attr': {'placeholder': 'Mot de passe ...', 'class': 'fieldFormLogin'}}) }}
+
+      {{ form_row(form.confirm_password, {'label': false, 'attr': {'placeholder': 'Confirmer mot de passe ...', 'class': 'fieldFormLogin'}}) }}
+
       <button class="btn-submit" type="submit">Inscription !</button>
       {{ form_end(form) }}
     </section>

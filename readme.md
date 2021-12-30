@@ -2,7 +2,7 @@
 
 ## Idées
 
-- cligno sur le terminal
+<!-- - cligno sur le terminal -->
 
 - mini jeu
 
@@ -10,7 +10,7 @@
 
 - z-index dynamique pour chaque fenêtre popup
 
-- popup quand le message dans la bdd est envoyé
+<!-- - popup quand le message dans la bdd est envoyé -->
 
 - envoyer un mail pour contact
 

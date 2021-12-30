@@ -238,6 +238,8 @@ export default {
   }
   .formField{
     display: flex;
+    align-items: center;
+
   }
   .inputField{
     background: RGB(48,10,36);
@@ -246,6 +248,7 @@ export default {
     color: white;
     font-size: 1rem;
     flex-grow: 5;
+    font-size: 1.1rem;
   }
   .submitField{
     background: RGB(48,10,36);
@@ -299,6 +302,7 @@ export default {
   @media (max-width: 460px) {
     .formField{
       flex-direction: column;
+      align-items: flex-start;
     }
     .submitField{
       text-align: start;

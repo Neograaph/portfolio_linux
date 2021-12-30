@@ -24,10 +24,10 @@
           </div>
 
           <form action="javascript:void(0)" method="post" class="contactForm">
-            <input placeholder="Nom prénom ou pseudo" type="text" id="usernameContact">
-            <input placeholder="Email" type="email" id="emailContact">
-            <input placeholder="Titre du message" type="text" id="titleContact">
-            <textarea placeholder="Message" class="txtarea" rows="8" style="resize: none;" id="messageContact"></textarea>
+            <input class='fieldContact' placeholder="Nom prénom ou pseudo" type="text" id="usernameContact">
+            <input class='fieldContact' placeholder="Email" type="email" id="emailContact">
+            <input class='fieldContact' placeholder="Titre du message" type="text" id="titleContact">
+            <textarea placeholder="Message" class="txtarea fieldContact" rows="8" style="resize: none;" id="messageContact"></textarea>
             <input type="submit" value="Envoyer" class="button button3" @click="sendMsg">
           </form>
 
@@ -99,10 +99,22 @@ export default {
           'Content-type': 'application/json'
         }
       })
-      .then(response => console.log(response))
+      .then(this.msgSend())
       .catch(err => console.warn(err));
 
       //  alert(this.response);
+    },
+    msgSend(){
+      // console.log('ok')
+      let username = '';
+      let email = '';
+      let title = '';
+      let message = '';
+      document.getElementById('usernameContact').value = username; 
+      document.getElementById('emailContact').value = email;
+      document.getElementById('titleContact').value = title;
+      document.getElementById('messageContact').value = message;
+      alert("message envoyé");
     }
   },
 };
@@ -262,6 +274,10 @@ export default {
   .button3:hover {
     background-color: #f44336;
     color: white;
+  }
+
+  .fieldContact{
+    padding: 5px;
   }
 
 

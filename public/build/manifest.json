@@ -1,14 +1,14 @@
 {
-  "build/app.css": "http://localhost:8080/build/app.css",
-  "build/app.js": "http://localhost:8080/build/app.js",
-  "build/runtime.js": "http://localhost:8080/build/runtime.js",
-  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_axios_index_js-node_m-ac2292.js": "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_axios_index_js-node_m-ac2292.js",
-  "build/images/moi.png": "http://localhost:8080/build/images/moi.445527e1.png",
-  "build/images/ubuntu21.jpeg": "http://localhost:8080/build/images/ubuntu21.6f7d6caf.jpeg",
-  "build/images/linkedin.png": "http://localhost:8080/build/images/linkedin.262c2bc6.png",
-  "build/images/malt.png": "http://localhost:8080/build/images/malt.084e1ebb.png",
-  "build/images/terminal.png": "http://localhost:8080/build/images/terminal.8d55afe4.png",
-  "build/images/mail.png": "http://localhost:8080/build/images/mail.84a385f8.png",
-  "build/images/portfolio.png": "http://localhost:8080/build/images/portfolio.608ca92d.png",
-  "build/images/note.png": "http://localhost:8080/build/images/note.5565ef8c.png"
+  "build/app.css": "/build/app.60aaaf1d.css",
+  "build/app.js": "/build/app.fb1da7b2.js",
+  "build/runtime.js": "/build/runtime.e4b160ba.js",
+  "build/586.3df64251.js": "/build/586.3df64251.js",
+  "build/images/moi.png": "/build/images/moi.445527e1.png",
+  "build/images/ubuntu21.jpeg": "/build/images/ubuntu21.6f7d6caf.jpeg",
+  "build/images/linkedin.png": "/build/images/linkedin.262c2bc6.png",
+  "build/images/malt.png": "/build/images/malt.084e1ebb.png",
+  "build/images/terminal.png": "/build/images/terminal.8d55afe4.png",
+  "build/images/mail.png": "/build/images/mail.84a385f8.png",
+  "build/images/portfolio.png": "/build/images/portfolio.608ca92d.png",
+  "build/images/note.png": "/build/images/note.5565ef8c.png"
 }

@@ -49,6 +49,11 @@
     font-size: 50px;
 }
 
+.fieldFormLogin{
+    padding: 5px;
+    margin: 5px;
+}
+
 /* compatibilitée hover sur téléphone */
 @media(hover: hover){}
 @media(any-pointer: coarse){}

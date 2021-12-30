@@ -14,13 +14,13 @@
     <h1 class="titleForm">Connexion !</h1><br/>
     <form action="{{ path('security_login') }}" method='post'>
       <div>
-        <label for="_username">Pseudo :</label><br/><br/>
-        <input type="text" placeholder="Pseudo ..." required name='_username'>
+        {# <label for="_username">Pseudo :</label><br/><br/> #}
+        <input class='fieldFormLogin' type="text" placeholder="Pseudo ..." required name='_username'>
       </div>
-      <br/><br/>
+      <br/>
       <div>
-        <label for="_password">Mot de passe :</label><br/><br/>
-        <input type="password" placeholder="Mot de passe ..." required name='_password'>
+        {# <label for="_password">Mot de passe :</label><br/><br/> #}
+        <input class='fieldFormLogin' type="password" placeholder="Mot de passe ..." required name='_password'>
       </div>
       <br/>
       <div>
