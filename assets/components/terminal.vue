@@ -20,7 +20,7 @@
       <div class="noteContent">
         <form class="formField" action="javascript:void(0)" @submit="execTerminalCmd">
         maxime@maxime-HM863BX ~ $
-        <input v-model="cmd" class="inputField" type="text">
+        <input v-model="cmd" class="inputField" type="text" :placeholder="placeholderI">
         <input class="submitField" type="submit" value=">">
         </form>
       </div>
@@ -62,21 +62,45 @@ export default {
     return {
       pageOpen: false,
       cmd: "",
+      placeholderI: " I",
+      timerI: null,
     }
   },
   methods: {
     openPage () {
       if (this.pageOpen==false){
         this.pageOpen=true;
+        this.clignoI();
         // console.log(this.pageOpen);
       }
     },
     closePage () {
       if (this.pageOpen==true){
         this.pageOpen=false;
+        this.stopClignoI();
         // console.log(this.pageOpen);
       }      
     },
+    clignoI(){
+      this.timerI = setInterval (() => {
+        this.switchPlaceholderI();
+      }, 500)
+    },
+    stopClignoI(){
+      clearInterval(this.timerI);
+    },
+    switchPlaceholderI(){
+      if (this.placeholderI == " I"){
+        this.placeholderI = ''
+        // console.log('0')
+      }
+      else if (this.placeholderI == ""){
+        this.placeholderI = ' I'
+        // console.log('1')
+      }
+    },
+
+    // commandes du terminal
     execTerminalCmd(){
       // console.log(this.cmd);
       let currentUrl = window.location.href;

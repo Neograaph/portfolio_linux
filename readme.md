@@ -10,7 +10,9 @@
 
 - z-index dynamique pour chaque fenêtre popup
 
-- ajouter les msg contact en BDD
+- popup quand le message dans la bdd est envoyé
+
+- envoyer un mail pour contact
 
 ## Auteur
 
