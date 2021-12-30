@@ -1,7 +1,7 @@
 <template>
   <figure class="iconGroup" @click="openPage">
     <img class='icon' src="../img/chat.png" alt="file">
-    <figcaption class="subIcon">Chat</figcaption>
+    <figcaption class="subIcon">Chat public</figcaption>
   </figure>
 
   <div v-if='pageOpen' class="page">
@@ -9,7 +9,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 svgTop" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
         </svg>
-        Chat
+        Chat public
         <svg @click="closePage" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 closeBtn svgTop" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>

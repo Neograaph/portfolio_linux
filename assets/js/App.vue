@@ -33,21 +33,31 @@ export default {
   },
   data () {
     return {
-      login: true,
+      login: false,
       infoUser: null,
+      url: null,
     }
   },
   methods: {
     loadInfosUser() {
-      axios.get("/api/infos-user").then(response => {
-        let data = response.data;
-        this.infoUser = data;
-        console.log(data);
-        console.log(this.infoUser);
-        console.log(this.infoUser.username)
+    axios.get("/api/infos-user").then(response => {
+      let data = response.data;
+      this.infoUser = data;
+      if (this.infoUser.username != null){
+        this.login = true;
+      }
     });
     }
   },
+  // watch: {
+  //   nowTimeStamp (newVal, oldVal) {
+  //     // console.log(newVal, oldVal);
+  //     this.nowTime = this.formatTimestamp(newVal);
+  //   },
+  // },
+  beforeMount(){
+    this.loadInfosUser();
+  }
 }
 </script>
 

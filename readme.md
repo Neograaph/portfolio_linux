@@ -10,7 +10,7 @@
 
 - z-index dynamique pour chaque fenêtre popup
 
-<!-- - empêcher d'envoyer msg vide contact -->
+- ajouter pseudo topbar
 
 - envoyer un mail pour contact
 
