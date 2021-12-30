@@ -2,15 +2,15 @@
 
 ## Idées
 
-<!-- - cligno sur le terminal -->
+- alert pour les repo ou liens non dispo PF
 
 - mini jeu
 
-- chat
+- chat live
 
 - z-index dynamique pour chaque fenêtre popup
 
-<!-- - popup quand le message dans la bdd est envoyé -->
+<!-- - empêcher d'envoyer msg vide contact -->
 
 - envoyer un mail pour contact
 

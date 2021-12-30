@@ -87,22 +87,21 @@ export default {
         title: title, 
         message: message
       }
-      let dataContactJson = JSON.stringify(dataContact);
-      // console.log(dataContactJson);
-      // console.log(dataContact);
-      // console.log(axios);
 
-      axios.post(`/new-msg`, {
-        dataContact
-      },{
-        headers: {
-          'Content-type': 'application/json'
+      if (username != ""){
+        if (message != ""){
+          // requête pour envoyer le form en BDD
+          axios.post(`/new-msg`, {
+            dataContact
+          },{
+            headers: {
+              'Content-type': 'application/json'
+            }
+          })
+          .then(this.msgSend())
+          .catch(err => console.warn(err));
         }
-      })
-      .then(this.msgSend())
-      .catch(err => console.warn(err));
-
-      //  alert(this.response);
+      }
     },
     msgSend(){
       // console.log('ok')
