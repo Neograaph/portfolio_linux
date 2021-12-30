@@ -83,11 +83,41 @@ export default {
       if (this.cmd == "inscription"){
         window.location.href = currentUrl + "inscription"
       }
-      if (this.cmd == "connexion"){
+      else if (this.cmd == "Inscription"){
+        window.location.href = currentUrl + "inscription"
+      }
+      else if (this.cmd == "i"){
+        window.location.href = currentUrl + "inscription"
+      }
+      else if (this.cmd == "I"){
+        window.location.href = currentUrl + "inscription"
+      }
+      else if (this.cmd == "connexion"){
         window.location.href = currentUrl + "connexion"
       }
-      if (this.cmd == "download"){
+      else if (this.cmd == "Connexion"){
+        window.location.href = currentUrl + "connexion"
+      }
+      else if (this.cmd == "c"){
+        window.location.href = currentUrl + "connexion"
+      }
+      else if (this.cmd == "C"){
+        window.location.href = currentUrl + "connexion"
+      }
+      else if (this.cmd == "download"){
         alert("téléchargement du CV disponible prochainement");
+      }
+      else if (this.cmd == "Download"){
+        alert("téléchargement du CV disponible prochainement");
+      }
+      else if (this.cmd == "d"){
+        alert("téléchargement du CV disponible prochainement");
+      }
+      else if (this.cmd == "D"){
+        alert("téléchargement du CV disponible prochainement");
+      }
+      else{
+        alert("commande inconnue");
       }
     }
   },

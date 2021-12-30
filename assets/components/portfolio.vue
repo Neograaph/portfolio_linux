@@ -16,17 +16,34 @@
     </div>
     <div class="noteContent">
       <div class="wrap" >
+
         <div class="tile" v-for='project in this.portfolio' :key='project'> 
-          <a :href="project.link_web" target="_blank" class="linkWeb">
+          <!-- <a :href="project.link_web" target="_blank" class="linkWeb"> -->
             <img :src="project.img" alt="image non disponible"/>
             <div class="text">
+
               <h1 class="nameProject">{{project.name}}</h1>
               <h2 class="animate-text">{{project.languages}}</h2>
               <p class="animate-text">{{ project.date }}</p>
-              <p class="animate-text">{{project.description}}</p>
+              <p class="animate-text descCard">{{project.description}}</p>
+              <div class="animate-text liensCards">
+
+                <a class="svgLink" :href="project.link_web" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                  </svg>
+                </a>
+                
+                <a class="svgLink" :href="project.link_repo" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-4.466 19.59c-.405.078-.534-.171-.534-.384v-2.195c0-.747-.262-1.233-.55-1.481 1.782-.198 3.654-.875 3.654-3.947 0-.874-.312-1.588-.823-2.147.082-.202.356-1.016-.079-2.117 0 0-.671-.215-2.198.82-.64-.18-1.324-.267-2.004-.271-.68.003-1.364.091-2.003.269-1.528-1.035-2.2-.82-2.2-.82-.434 1.102-.16 1.915-.077 2.118-.512.56-.824 1.273-.824 2.147 0 3.064 1.867 3.751 3.645 3.954-.229.2-.436.552-.508 1.07-.457.204-1.614.557-2.328-.666 0 0-.423-.768-1.227-.825 0 0-.78-.01-.055.487 0 0 .525.246.889 1.17 0 0 .463 1.428 2.688.944v1.489c0 .211-.129.459-.528.385-3.18-1.057-5.472-4.056-5.472-7.59 0-4.419 3.582-8 8-8s8 3.581 8 8c0 3.533-2.289 6.531-5.466 7.59z"/>
+                  </svg>
+                </a>
+
+              </div>
               <!-- <a :href="project.link_repo" class="animate-text link" target="_blank">Code du projet</a> -->
             </div>
-          </a>
+          <!-- </a> -->
         </div>
       </div>
     </div>
@@ -89,7 +106,7 @@ export default {
   .iconGroup:hover{
     background: lightgray;
     opacity: 50%;
-    cursor: pointer;
+    /* cursor: pointer; */
   }
   .icon{
     height: 65px;
@@ -185,7 +202,7 @@ export default {
     display:inline-block;
     background-size:cover;
     position:relative;
-    cursor:pointer;
+    /* cursor:pointer; */
     transition: all 0.4s ease-out;
     box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.10);
     overflow:hidden;
@@ -209,6 +226,8 @@ export default {
     height:100%;
     width: 100%;
     color: white;
+    display: flex;
+    flex-direction: column;
   }
   .tile h1{
     font-weight:300;
@@ -252,6 +271,18 @@ export default {
   .tile:hover .animate-text{
     transform:translateX(0);
     opacity:1;
+  }
+  .liensCards{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  .descCard{
+    flex-grow: 10;
+  }
+  .svgLink{
+    color: black;
   }
   /* .dots{
     position:absolute;

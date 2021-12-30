@@ -24,21 +24,28 @@ class ContactController extends AbstractController
 
         $requestPayload = file_get_contents("php://input");
         $data = json_decode($requestPayload, true);
+        
+        // $test = '{"dataContactJson":"{\"username\":\"\",\"email\":\"\",\"title\":\"sdzqs\",\"message\":\"\"}"}';
+        // $test2 = '{"dataContact":{"username":"","email":"","title":"sdzqdsdzsd","message":"qzdsdzqqdsd"}}';
+        // $testDecode = json_decode($test, true);
+        // $testDecode2 = json_decode($test2, true);
 
-        // dd($dataPlugin);
-        // $fname = $_POST["firstname"];
+        // $testDecode22 = $testDecode2['dataContact']['username'];       
+        // dd($testDecode , $testDecode2 , $testDecode22);
 
+        
+        // $contact->setUsername('demoo');
+        // $contact->setEmail('neo@admin.com');
+        // $contact->setTitle('demotitre');
+        // $contact->setMessage('Bonjour, je recherche un ...');
+        
         $contact = new Contact;
-        $contact->setFirstname('neo');
-        $contact->setLastname('gauthier');
-        $contact->setEmail('neo@admin.com');
-        $contact->setTitle('demotitre');
-        $contact->setMessage('Bonjour, je recherche un ...');
-        // $contact->setFirstname($data);
-        // $contact->setLastname($data['lastname']);
-        // $contact->setEmail($data['email']);
-        // $contact->setTitle($data['title']);
-        // $contact->setMessage($data['message']);
+
+        $contact->setUsername($data['dataContact']['username']);
+        $contact->setEmail($data['dataContact']['email']);
+        $contact->setTitle($data['dataContact']['title']);
+        $contact->setMessage($data['dataContact']['message']);
+
         $em->persist($contact);
         $em->flush();
 

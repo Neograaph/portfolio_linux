@@ -24,8 +24,7 @@
           </div>
 
           <form action="javascript:void(0)" method="post" class="contactForm">
-            <input placeholder="Nom" type="text" id="lastnameContact">
-            <input placeholder="Prénom" type="text" id="firstnameContact">
+            <input placeholder="Nom prénom ou pseudo" type="text" id="usernameContact">
             <input placeholder="Email" type="email" id="emailContact">
             <input placeholder="Titre du message" type="text" id="titleContact">
             <textarea placeholder="Message" class="txtarea" rows="8" style="resize: none;" id="messageContact"></textarea>
@@ -78,31 +77,29 @@ export default {
       }      
     },
     sendMsg () {
-      let firstname = document.getElementById('firstnameContact').value;
-      let lastname = document.getElementById('lastnameContact').value;
+      let username = document.getElementById('usernameContact').value;
       let email = document.getElementById('emailContact').value;
       let title = document.getElementById('titleContact').value;
       let message = document.getElementById('messageContact').value;
-      let dataContact = {
-        firstname: firstname, 
-        lastname: lastname, 
+      let dataContact = { 
+        username: username, 
         email: email, 
         title: title, 
         message: message
       }
       let dataContactJson = JSON.stringify(dataContact);
-      console.log(dataContactJson);
+      // console.log(dataContactJson);
       // console.log(dataContact);
       // console.log(axios);
 
       axios.post(`/new-msg`, {
-        dataContactJson
+        dataContact
       },{
         headers: {
           'Content-type': 'application/json'
         }
       })
-      .then(response => console.log(response.request))
+      .then(response => console.log(response))
       .catch(err => console.warn(err));
 
       //  alert(this.response);
