@@ -91,7 +91,7 @@ export default {
       if (username != ""){
         if (message != ""){
           // requête pour envoyer le form en BDD
-          axios.post(`/new-msg`, {
+          axios.post(`/api/new-contact`, {
             dataContact
           },{
             headers: {

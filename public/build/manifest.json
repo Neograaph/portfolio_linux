@@ -14,5 +14,6 @@
   "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-6656ee.js": "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-6656ee.js",
   "build/app.png": "http://localhost:8080/build/images/chat.d9333f46.png",
   "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-63ccca.js": "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-63ccca.js",
-  "build/images/chat.png": "http://localhost:8080/build/images/chat.d9333f46.png"
+  "build/images/chat.png": "http://localhost:8080/build/images/chat.d9333f46.png",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_axios_index_js-node_m-606ac6.js": "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_axios_index_js-node_m-606ac6.js"
 }

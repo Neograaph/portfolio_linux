@@ -2,22 +2,27 @@
 
 namespace App\Controller;
 
+use DateTime;
+use DateTimeZone;
+use App\Entity\User;
+use DateTimeImmutable;
 use App\Entity\Contact;
-use Requests;
+use App\Entity\Message;
 use App\Form\ContactType;
-use App\Repository\ContactRepository;
+use App\Form\MessageType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ContactController extends AbstractController
 {
     /**
-     * @Route("/new-msg", name="new-msg")
+     * @Route("/api/new-contact", name="new-contact")
      */
-    public function newMsg(Request $request,EntityManagerInterface $em): Response
+    public function newContact(Request $request,EntityManagerInterface $em): Response
     {
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
@@ -33,7 +38,6 @@ class ContactController extends AbstractController
         // $testDecode22 = $testDecode2['dataContact']['username'];       
         // dd($testDecode , $testDecode2 , $testDecode22);
 
-        
         // $contact->setUsername('demoo');
         // $contact->setEmail('neo@admin.com');
         // $contact->setTitle('demotitre');
@@ -49,6 +53,35 @@ class ContactController extends AbstractController
         $em->persist($contact);
         $em->flush();
 
+
+        return $this->json($data);
+    }
+    /**
+     * @Route("/api/new-message", name="new-message")
+     */
+    public function newMessage(Request $request,EntityManagerInterface $em): Response
+    {
+        $form = $this->createForm(MessageType::class);
+        $form->handleRequest($request);
+
+        $requestPayload = file_get_contents("php://input");
+        // $requestPayload = '{"dataMessage":{"message":"hello"}}';
+        $data = json_decode($requestPayload, true);
+
+        $user = new User();
+        $user = $this->getUser();
+        
+        $msg = new Message;
+        $msg->setUser($user);
+        $msg->setContent($data['dataMessage']['message']);
+
+        $datetime = new DateTimeImmutable();
+        // dd($datetime);
+        $msg->setPostAt($datetime);
+        // dd($msg);
+
+        $em->persist($msg);
+        $em->flush();
 
         return $this->json($data);
     }

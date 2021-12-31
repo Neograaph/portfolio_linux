@@ -17,24 +17,23 @@
     <div class="noteContent">
 
       <!-- affiche les messages -->
-      <div class="message" v-for="message in this.messages" :key="message">
+      <div class="message messageList" id="messageList" v-for="message in this.messages" :key="message">
         <p>{{ message.content }}</p>
         <div class="subMessage">
-          <p>by Anonymous</p>
+          <p class="authorSubMessage">by Anonymous</p>
           <p class="dateSubMessage">{{ message.post_at }}</p>
         </div>
       </div>
 
     </div>
     <div class="noteFooter">
+
       <!-- ajoute un nouveau message -->
       <form class="newMessageForm" action="javascript:void(0)">
         <input class="newMessageField" type="textarea" placeholder="Nouveau message">
-        <input class="newMessageSubmit" type="submit" value="Envoyer">
+        <input @click="sendNewMsg()" class="newMessageSubmit" type="submit" value="Envoyer">
       </form>
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 svgBot" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg> -->
+
     </div>
   </div>
 </template>
@@ -62,15 +61,55 @@ export default {
         this.pageOpen=false;
       }      
     },
+
     loadMessages() {
       axios.get("/api/messages").then(response => {
         let data = response.data;
+
+        // format toutes les dates immutables de la BDD
+        data.forEach(message => {
+          let timestamp = Date.parse(message.post_at);
+          let dateMsg = new Date(timestamp);
+          message.post_at = dateMsg;
+        });
         this.messages = data;
-        console.log(data);
-        console.log(this.messages);
-        console.log(this.messages[0].content)
       });
-    }
+
+      setTimeout(() => {this.scrollDown()}, 1000)
+    },
+
+    sendNewMsg(){
+      let message = document.getElementsByClassName('newMessageField')[0].value;
+      let dataMessage = { 
+        message: message
+      }
+
+      if (message != ""){
+          // requête pour envoyer le message dans la BDD
+          axios.post(`/api/new-message`, {
+            dataMessage
+          },{
+            headers: {
+              'Content-type': 'application/json'
+            }
+          })
+          .then(this.msgSend())
+          .catch(err => console.warn(err));
+      }
+    },
+
+    msgSend(){
+      let message = '';
+      document.getElementsByClassName('newMessageField')[0].value = message;
+      this.loadMessages();
+    },
+
+    scrollDown(){
+      let messageBody = document.querySelectorAll('.messageList');
+      let goodIndex = messageBody.length - 1 
+      let lastmsg = messageBody[goodIndex];
+      lastmsg.scrollIntoView({ behavior: 'smooth' });
+    },
   },
 };
 </script>
@@ -158,7 +197,6 @@ export default {
     scrollbar-width: thin;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     gap: 1rem;
   }
   .noteFooter{
@@ -173,6 +211,7 @@ export default {
     display: flex;
     flex-direction: column;
     color: black;
+    padding: 5px;
   }
   .message:hover{
     background: #a07a08;
@@ -184,6 +223,9 @@ export default {
   }
   .dateSubMessage{
     text-align: end;
+  }
+  .authorSubMessage{
+    font-style: italic;
   }
   .newMessageForm{
     display: flex;
