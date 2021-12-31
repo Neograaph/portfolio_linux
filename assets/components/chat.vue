@@ -46,6 +46,8 @@ export default {
     return {
       pageOpen: false,
       messages: null,
+      tsFormatter: Intl.DateTimeFormat('fr', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' })
+
     }
   },
   props: ['demo'],
@@ -69,13 +71,21 @@ export default {
         // format toutes les dates immutables de la BDD
         data.forEach(message => {
           let timestamp = Date.parse(message.post_at);
-          let dateMsg = new Date(timestamp);
+          let dateMsg = this.formatTimestamp(new Date(timestamp));
           message.post_at = dateMsg;
+          
+          // let dateFormated = dateMsgBrut
         });
+
         this.messages = data;
       });
 
       setTimeout(() => {this.scrollDown()}, 1000)
+    },
+
+    formatTimestamp (ts) {
+      // console.log(ts);
+      return this.tsFormatter.format(ts);
     },
 
     sendNewMsg(){
@@ -190,7 +200,7 @@ export default {
     cursor: pointer;
   }
   .noteContent{
-    padding: 10px 10px 10px 10px;
+    padding: 0px;
     flex-grow: 10;
     overflow-y: scroll;
     scrollbar-color: rebeccapurple green;
@@ -211,7 +221,7 @@ export default {
     display: flex;
     flex-direction: column;
     color: black;
-    padding: 5px;
+    padding: 15px;
   }
   .message:hover{
     background: #a07a08;
@@ -220,6 +230,7 @@ export default {
     display: flex;
     gap: 1rem;
     justify-content: space-between;
+    padding-top: 1rem;
   }
   .dateSubMessage{
     text-align: end;
