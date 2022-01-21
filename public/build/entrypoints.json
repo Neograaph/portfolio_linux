@@ -8,6 +8,9 @@
       ],
       "css": [
         "http://localhost:8080/build/app.css"
+      ],
+      "png": [
+        "http://localhost:8080/build/images/terminal.8d55afe4.png"
       ]
     }
   }
