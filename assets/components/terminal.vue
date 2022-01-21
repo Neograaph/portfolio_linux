@@ -86,7 +86,7 @@ export default {
       this.timerI = setInterval (() => {
         this.switchPlaceholderI();
       }, 500)
-      this.getFocus()
+      // this.getFocus()
     },
     stopClignoI(){
       clearInterval(this.timerI);
