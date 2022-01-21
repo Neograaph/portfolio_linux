@@ -20,7 +20,7 @@
       <div class="noteContent" @click="getFocus()">
         <form class="formField" action="javascript:void(0)" @submit="execTerminalCmd">
         maxime@maxime-HM863BX ~ $
-        <input v-model="cmd" class="inputField" id="inputField" type="text" :placeholder="placeholderI">
+        <input @keyup="this.transformToLowerCase()" v-model="cmd" class="inputField" id="inputField" autocapitalize="none" type="text" :placeholder="placeholderI">
         <input class="submitField" type="submit" value=">">
         </form>
       </div>
@@ -104,6 +104,9 @@ export default {
     getFocus() {
       document.getElementById("inputField").focus();
     },
+    transformToLowerCase(){
+      this.cmd = this.cmd.toLowerCase();
+    },
 
 
     // commandes du terminal
@@ -113,33 +116,33 @@ export default {
       if (this.cmd == "inscription"){
         window.location.href = currentUrl + "inscription"
       }
-      else if (this.cmd == "Inscription"){
-        window.location.href = currentUrl + "inscription"
-      }
+      // else if (this.cmd == "Inscription"){
+      //   window.location.href = currentUrl + "inscription"
+      // }
       else if (this.cmd == "i"){
         window.location.href = currentUrl + "inscription"
       }
-      else if (this.cmd == "I"){
-        window.location.href = currentUrl + "inscription"
-      }
+      // else if (this.cmd == "I"){
+      //   window.location.href = currentUrl + "inscription"
+      // }
       else if (this.cmd == "connexion"){
         window.location.href = currentUrl + "connexion"
       }
-      else if (this.cmd == "Connexion"){
-        window.location.href = currentUrl + "connexion"
-      }
+      // else if (this.cmd == "Connexion"){
+      //   window.location.href = currentUrl + "connexion"
+      // }
       else if (this.cmd == "c"){
         window.location.href = currentUrl + "connexion"
       }
-      else if (this.cmd == "C"){
-        window.location.href = currentUrl + "connexion"
-      }
+      // else if (this.cmd == "C"){
+      //   window.location.href = currentUrl + "connexion"
+      // }
       else if (this.cmd == "cv"){
         alert("CV disponible prochainement");
       }
-      else if (this.cmd == "CV"){
-        alert("CV disponible prochainement");
-      }
+      // else if (this.cmd == "CV"){
+      //   alert("CV disponible prochainement");
+      // }
       else if (this.cmd == "mentionslegales"){
         alert("© 2022 Maxime Gauthier. All Rights Reserved.");
       }
