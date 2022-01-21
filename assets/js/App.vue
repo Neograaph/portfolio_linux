@@ -55,7 +55,7 @@ export default {
   //     this.nowTime = this.formatTimestamp(newVal);
   //   },
   // },
-  beforeMount(){
+  afterMount(){
     this.loadInfosUser();
   }
 }
