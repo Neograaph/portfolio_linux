@@ -1,5 +1,5 @@
 <template>
-  <figure class="iconGroup" @click="openPage">
+  <figure class="iconGroup" @click="openPage" >
     <img class='icon' src="../img/terminal.png" alt="file">
     <figcaption class="subIcon">terminal</figcaption>
   </figure>
@@ -7,7 +7,7 @@
   <div v-if='pageOpen' class="page">
 
     <!-- popup terminal -->
-    <div class="page1">  
+    <div class="page1" id="page1" @click="getFocus()">  
       <div class="noteHeader">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 svgTop" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -20,7 +20,7 @@
       <div class="noteContent">
         <form class="formField" action="javascript:void(0)" @submit="execTerminalCmd">
         maxime@maxime-HM863BX ~ $
-        <input v-model="cmd" class="inputField" type="text" :placeholder="placeholderI">
+        <input v-model="cmd" class="inputField" id="inputField" type="text" :placeholder="placeholderI">
         <input class="submitField" type="submit" value=">">
         </form>
       </div>
@@ -41,7 +41,8 @@
       <div class="noteContent">
         - inscription <br/>
         - connexion <br/>
-        - download (pour télécharger mon CV) <br/>
+        - cv <br/>
+        - mentionslegales <br/>
       </div>
       <div class="noteFooter">
         <div>loading /notes.txt"...</div>
@@ -62,7 +63,7 @@ export default {
     return {
       pageOpen: false,
       cmd: "",
-      placeholderI: " I",
+      placeholderI: " En attente...",
       timerI: null,
     }
   },
@@ -85,20 +86,25 @@ export default {
       this.timerI = setInterval (() => {
         this.switchPlaceholderI();
       }, 500)
+      this.getFocus()
     },
     stopClignoI(){
       clearInterval(this.timerI);
     },
     switchPlaceholderI(){
-      if (this.placeholderI == " I"){
+      if (this.placeholderI == " En attente..."){
         this.placeholderI = ''
         // console.log('0')
       }
       else if (this.placeholderI == ""){
-        this.placeholderI = ' I'
+        this.placeholderI = ' En attente...'
         // console.log('1')
       }
     },
+    getFocus() {
+      document.getElementById("inputField").focus();
+    },
+
 
     // commandes du terminal
     execTerminalCmd(){
@@ -128,17 +134,14 @@ export default {
       else if (this.cmd == "C"){
         window.location.href = currentUrl + "connexion"
       }
-      else if (this.cmd == "download"){
-        alert("téléchargement du CV disponible prochainement");
+      else if (this.cmd == "cv"){
+        alert("CV disponible prochainement");
       }
-      else if (this.cmd == "Download"){
-        alert("téléchargement du CV disponible prochainement");
+      else if (this.cmd == "CV"){
+        alert("CV disponible prochainement");
       }
-      else if (this.cmd == "d"){
-        alert("téléchargement du CV disponible prochainement");
-      }
-      else if (this.cmd == "D"){
-        alert("téléchargement du CV disponible prochainement");
+      else if (this.cmd == "mentionslegales"){
+        alert("© 2022 Maxime Gauthier. All Rights Reserved.");
       }
       else{
         alert("commande inconnue");
