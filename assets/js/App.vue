@@ -36,6 +36,7 @@ export default {
       login: false,
       infoUser: null,
       url: null,
+      pseudo: null,
     }
   },
   methods: {
@@ -45,6 +46,7 @@ export default {
       this.infoUser = data;
       if (this.infoUser.username != null){
         this.login = true;
+        this.pseudo = this.infoUser.username;
       }
     });
     }

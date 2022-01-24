@@ -39,10 +39,11 @@
         </svg>
       </div>
       <div class="noteContent">
-        - inscription <br/>
-        - connexion <br/>
-        - cv <br/>
-        - mentionslegales <br/>
+        <span class="fillCmdSpan" @click="fillCmd('inscription')">- inscription</span><br/>
+        <span class="fillCmdSpan" @click="fillCmd('connexion')">- connexion</span><br/>
+        <span class="fillCmdSpan" @click="fillCmd('deconnexion')">- deconnexion</span><br/>
+        <span class="fillCmdSpan" @click="fillCmd('mentionslegales')">- mentionslegales</span><br/>
+        <span class="fillCmdSpan" @click="fillCmd('cv')">- cv</span><br/>
       </div>
       <div class="noteFooter">
         <div>loading /notes.txt"...</div>
@@ -107,45 +108,49 @@ export default {
     transformToLowerCase(){
       this.cmd = this.cmd.toLowerCase();
     },
+    fillCmd(cmd){
+      // console.log(cmd);
+      this.cmd = cmd;
+    },
+    fadeCmd(){
+      // annimation cmd couleur rouge puis retour au blanc après quelques secondes.
+    },
 
 
     // commandes du terminal
     execTerminalCmd(){
-      // console.log(this.cmd);
       let currentUrl = window.location.href;
+      // inscription
       if (this.cmd == "inscription"){
         window.location.href = currentUrl + "inscription"
       }
-      // else if (this.cmd == "Inscription"){
-      //   window.location.href = currentUrl + "inscription"
-      // }
       else if (this.cmd == "i"){
         window.location.href = currentUrl + "inscription"
       }
-      // else if (this.cmd == "I"){
-      //   window.location.href = currentUrl + "inscription"
-      // }
+      // connexion
       else if (this.cmd == "connexion"){
         window.location.href = currentUrl + "connexion"
       }
-      // else if (this.cmd == "Connexion"){
-      //   window.location.href = currentUrl + "connexion"
-      // }
       else if (this.cmd == "c"){
         window.location.href = currentUrl + "connexion"
       }
-      // else if (this.cmd == "C"){
-      //   window.location.href = currentUrl + "connexion"
-      // }
+      // déconnexion
+      else if (this.cmd == "deconnexion"){
+        window.location.href = currentUrl + "deconnexion"
+      }
+      else if (this.cmd == "d"){
+        window.location.href = currentUrl + "deconnexion"
+      }
+      
+      // cv
       else if (this.cmd == "cv"){
         alert("CV disponible prochainement");
       }
-      // else if (this.cmd == "CV"){
-      //   alert("CV disponible prochainement");
-      // }
+      // mentions légales
       else if (this.cmd == "mentionslegales"){
         alert("© 2022 Maxime Gauthier. All Rights Reserved.");
       }
+      // erreur cmd
       else{
         alert("commande inconnue");
       }
@@ -282,6 +287,9 @@ export default {
     border-radius: 10px 10px 0 0;
     margin-top: 200px;
     /* border: solid .5px black; */
+  }
+  .fillCmdSpan:hover{
+    cursor: pointer;
   }
 
   /* mode tablette ou petit pc */
