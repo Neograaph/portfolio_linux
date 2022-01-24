@@ -12,8 +12,9 @@
       <br/>
       {{ form_start(form) }}
 
+      {{ form_widget(form) }}
       {# <label for="username">Pseudo</label> #}
-      {{ form_row(form.username, {'label': false, 'attr': {'placeholder': 'Pseudo ...', 'class': 'fieldFormLogin'}}) }}
+      {# {{ form_row(form.username, {'label': false, 'attr': {'placeholder': 'Pseudo ...', 'class': 'fieldFormLogin'}}) }}
 
       {{ form_row(form.email, {'label': false, 'attr': {'placeholder': 'Email ...', 'class': 'fieldFormLogin'}}) }}
 
@@ -21,7 +22,7 @@
 
       {{ form_row(form.confirm_password, {'label': false, 'attr': {'placeholder': 'Confirmer mot de passe ...', 'class': 'fieldFormLogin'}}) }}
 
-      {{ form_row(form._token) }}
+      {{ form_row(form._token) }} #}
       <br/>
       <button class="btn-submit" type="submit">Inscription !</button>
       {{ form_end(form) }}
