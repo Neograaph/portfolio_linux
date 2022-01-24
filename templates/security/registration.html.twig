@@ -21,6 +21,7 @@
 
       {{ form_row(form.confirm_password, {'label': false, 'attr': {'placeholder': 'Confirmer mot de passe ...', 'class': 'fieldFormLogin'}}) }}
 
+      {{ form_rest(form) }}
       <br/>
       <button class="btn-submit" type="submit">Inscription !</button>
       {{ form_end(form) }}
