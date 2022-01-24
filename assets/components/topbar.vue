@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <div class="activities">{{ this.pseudo ? this.pseudo: 'Activities' }}</div>
+        <div class="activities">{{ this.pseudo ? "Hello, "+this.pseudo+ " !": 'Activities' }}</div>
         <div>{{ nowTime }}</div>
         <div>
             <div class="svgContainer">
@@ -31,10 +31,10 @@ export default {
         return {
         nowTime: null,
         nowTimeStamp: null,
-        pseudo: null,
         tsFormatter: Intl.DateTimeFormat('fr', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' })
         }
     },
+    props: ["pseudo"],
     methods: {
         formatTimestamp (ts) {
             // console.log(ts);

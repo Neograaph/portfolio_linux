@@ -1,6 +1,6 @@
 <template>
   <div class="bg">
-    <topbar />
+    <topbar v-bind:pseudo="this.pseudo" />
     <div class='iconsDesktop'>
       <presentation />
       <portfolio />
@@ -45,7 +45,7 @@ export default {
       let data = response.data;
       this.infoUser = data;
       if (this.infoUser.username != null){
-        this.login = true;
+        // this.login = true;
         this.pseudo = this.infoUser.username;
       }
     });
@@ -57,7 +57,7 @@ export default {
   //     this.nowTime = this.formatTimestamp(newVal);
   //   },
   // },
-  afterMount(){
+  beforeMount(){
     this.loadInfosUser();
   }
 }
