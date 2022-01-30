@@ -20,7 +20,7 @@
       <div class="noteContent" @click="getFocus()">
         <form class="formField" action="javascript:void(0)" @submit="execTerminalCmd">
         maxime@maxime-HM863BX ~ $
-        <input @keyup="this.transformToLowerCase()" v-model="cmd" class="inputField" id="inputField" autocapitalize="none" type="text" :placeholder="placeholderI">
+        <input @keyup="this.transformToLowerCase()" v-model="cmd" class="inputField" id="inputField" autocomplete="off" type="text" :placeholder="placeholderI">
         <input class="submitField" type="submit" value=">">
         </form>
       </div>

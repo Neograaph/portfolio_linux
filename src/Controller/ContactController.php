@@ -16,13 +16,16 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 
 class ContactController extends AbstractController
 {
     /**
      * @Route("/api/new-contact", name="new-contact")
      */
-    public function newContact(Request $request,EntityManagerInterface $em): Response
+    public function newContact(Request $request,EntityManagerInterface $em, MailerInterface $mailer): Response
     {
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
@@ -53,6 +56,20 @@ class ContactController extends AbstractController
         $em->persist($contact);
         $em->flush();
 
+        // envoie du mail
+        $email = (new Email())
+            // on attribue l'expéditeur
+            ->From($data['dataContact']['email'])
+            // on attribue le destinataire
+            ->To('maxime.gauthier045@gmail.com')
+            ->subject($data['dataContact']['title'])
+            ->text($data['dataContact']['message'])
+        ;
+
+        // on envoie de le message
+        $mailer->send($email);
+
+        // $this->addFlash('message', 'le message à été envoyé');
 
         return $this->json($data);
     }
