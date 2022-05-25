@@ -15,11 +15,11 @@
         </svg>
     </div>
     <div class="noteContent">
-      Je m'appelle Maxime, j'ai 25 ans et je suis développeur web. Je vous présente ici certains de mes projets, réalisés lors de mes formations ou pendant mon temps libre.<br/><br/>
+      Je m'appelle Maxime, j'ai {{ neoAge }} ans et je suis développeur. Je vous présente ici certains de mes projets, réalisés lors de mes formations ou pendant mon temps libre.<br/><br/>
 
-      Au cours de mes projets, j'ai eu l'occasion de travailler sur plusieurs langages de programmation ; HTML, CSS, Javascript, PHP. Ainsi que sur des frameworks et des librairies comme Symfony, Vue JS, Bootstrap, tailwind CSS...<br/><br/>
+      Au cours de mes projets, j'ai eu l'occasion de travailler sur plusieurs langages de programmation, ainsi que sur différents frameworks et librairies. J'adore apprendre, donc découvrir de nouveaux univers me plait énormément.<br/><br/>
 
-      Je travaille sous Linux et j'apprécie énormément cet univers, c'est ce qui m'a donné envie de réaliser ce design original pour mon portfolio.<br/><br/>
+      Je travaille sous Linux et j'apprécie énormément cet univers, c'est ce qui m'a donné envie de réaliser ce design original pour mon portfolio. N'hésitez pas à l'explorer pour découvrir toutes ses fonctionalités...<br/><br/>
 
       Pour toute demande, n'hésitez pas à me contacter par mail ou sur les réseaux.<br/><br/>
 
@@ -40,13 +40,27 @@ export default {
   data () {
     return {
       pageOpen: false,
+      neoAge: 26,
     }
   },
   methods: {
     openPage () {
       if (this.pageOpen==false){
         this.pageOpen=true;
-        // console.log(this.pageOpen);
+        // calcul de l'age
+        const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+        function dateDiffInDays(a, b) {
+          // Discard the time and time-zone information.
+          const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+          const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+          return Math.floor((utc2 - utc1) / _MS_PER_DAY);
+        }
+
+        const a = new Date("1995-09-24"),
+            b = new Date(),
+            difference = dateDiffInDays(a, b);
+            // console.log(difference);
+            this.neoAge = difference / 365;
       }
     },
     closePage () {
