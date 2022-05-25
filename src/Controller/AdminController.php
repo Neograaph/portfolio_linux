@@ -11,11 +11,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AdminController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_ADMIN", message="No access! Get out!")
      * @Route("/admin/portfolio/add", name="portfolio_add")
      */
     public function addWork(Request $request, EntityManagerInterface $em): Response

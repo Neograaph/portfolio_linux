@@ -17,7 +17,7 @@
     <div class="noteContent">
       Je m'appelle Maxime, j'ai {{ neoAge }} ans et je suis développeur. Je vous présente ici certains de mes projets, réalisés lors de mes formations ou pendant mon temps libre.<br/><br/>
 
-      Au cours de mes projets, j'ai eu l'occasion de travailler sur plusieurs langages de programmation, ainsi que sur différents frameworks et librairies. J'adore apprendre, donc découvrir de nouveaux univers me plait énormément.<br/><br/>
+      Au cours de mes projets, j'ai eu l'occasion de travailler sur plusieurs langages de programmation, ainsi que sur différents frameworks et librairies. J'adore apprendre, donc découvrir des nouvelles choses me plait énormément.<br/><br/>
 
       Je travaille sous Linux et j'apprécie énormément cet univers, c'est ce qui m'a donné envie de réaliser ce design original pour mon portfolio. N'hésitez pas à l'explorer pour découvrir toutes ses fonctionalités...<br/><br/>
 
