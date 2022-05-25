@@ -3,8 +3,8 @@
 {% block body %}
   <main class="mainForm">
     <section class="sectionBtn">
-      <a href="{{ path('home') }}"><button class="btn">Retour sur le site</button></a> 
-      <a href="{{ path('security_login') }}"><button class="btn">Page de connexion</button></a> 
+      <a href="{{ path('home') }}"><button class="btn btn-warning">Retour sur le site</button></a> 
+      <a href="{{ path('security_login') }}"><button class="btn btn-danger">Page de connexion</button></a> 
     </section>
 
     <section class="sectionForm">
@@ -25,7 +25,7 @@
       {{ form_row(form._token) }} #}
       {# {{ form_widget(form._token) }} #}
       <br/>
-      <button class="btn-submit" type="submit">Inscription !</button>
+      <button class="btn btn-success" type="submit">Inscription !</button>
       {{ form_end(form) }}
     </section>
 
